@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wish App - Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+    }
+
+    nav {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 { margin: 0; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .settings-section {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .settings-section h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .settings-section label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .settings-section input, .settings-section select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .settings-section button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .settings-section button:disabled {
+      background-color: #aaa;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Wish App</h2>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="customer.html">Customers</a></li>
+      <li><a href="setting.html">Settings</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Settings</h1>
+
+    <div class="settings-section">
+      <h2>Profile Settings</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email">
+
+      <button onclick="saveProfileSettings()">Save Profile</button>
+    </div>
+
+    <div class="settings-section">
+      <h2>Notification Settings</h2>
+      <label for="emailNotifications">Email Notifications</label>
+      <select id="emailNotifications">
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+      </select>
+
+      <label for="smsNotifications">SMS Notifications</label>
+      <select id="smsNotifications">
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+      </select>
+
+      <button onclick="saveNotificationSettings()">Save Notifications</button>
+    </div>
+
+    <div class="settings-section">
+      <h2>Change Password</h2>
+      <label for="currentPassword">Current Password</label>
+      <input type="password" id="currentPassword">
+
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword">
+
+      <label for="confirmPassword">Confirm New Password</label>
+      <input type="password" id="confirmPassword">
+
+      <button onclick="changePassword()">Change Password</button>
+    </div>
+  </main>
+
+  <footer>&copy; 2025 Wish App. All rights reserved.</footer>
+
+  <script>
+    function saveProfileSettings() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      alert(`Profile saved!\nName: ${name}\nEmail: ${email}`);
+    }
+
+    function saveNotificationSettings() {
+      const emailNotif = document.getElementById('emailNotifications').value;
+      const smsNotif = document.getElementById('smsNotifications').value;
+      alert(`Notifications saved!\nEmail: ${emailNotif}\nSMS: ${smsNotif}`);
+    }
+
+    function changePassword() {
+      const current = document.getElementById('currentPassword').value;
+      const newPass = document.getElementById('newPassword').value;
+      const confirm = document.getElementById('confirmPassword').value;
+
+      if (newPass !== confirm) {
+        alert('New passwords do not match!');
+        return;
+      }
+
+      alert('Password changed successfully!');
+    }
+  </script>
+
+</body>
+</html>
