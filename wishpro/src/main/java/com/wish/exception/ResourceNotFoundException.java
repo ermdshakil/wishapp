@@ -1,4 +1,4 @@
-package com.wish.model;
+package com.wish.exception;
 
 import lombok.Getter;
 import lombok.Setter;

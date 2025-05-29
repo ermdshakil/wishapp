@@ -25,11 +25,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wish.exception.ResourceNotFoundException;
 import com.wish.model.Customer;
-import com.wish.model.EmailService;
-import com.wish.model.NotificationScheduler;
-import com.wish.model.ResourceNotFoundException;
 import com.wish.model.WishStatus;
+import com.wish.repository.CustomerRepository;
+import com.wish.repository.WishStatusRepository;
+import com.wish.service.EmailService;
+import com.wish.service.NotificationScheduler;
 
 
 @RestController

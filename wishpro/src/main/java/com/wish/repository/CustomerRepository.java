@@ -1,4 +1,4 @@
-package com.wish.controller;
+package com.wish.repository;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.wish.model;
+package com.wish.service;
 
 import com.wish.WishproApplication;
 import org.springframework.beans.factory.annotation.Autowired;

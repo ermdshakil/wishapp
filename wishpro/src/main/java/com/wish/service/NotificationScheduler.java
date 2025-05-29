@@ -1,4 +1,4 @@
-package com.wish.model;
+package com.wish.service;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.wish.controller.CustomerRepository;
+import com.wish.model.Customer;
+import com.wish.repository.CustomerRepository;
 
 @Service
 public class NotificationScheduler {
